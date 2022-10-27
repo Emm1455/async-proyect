@@ -1,0 +1,19 @@
+{
+  "name": "async-proyect",
+  "version": "1.0.0",
+  "description": "Proyect of asyncronous conection to Platzi Fake Store API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emm1455/async-proyect.git"
+  },
+  "author": "Emmanuel Franco Mercado Luna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Emm1455/async-proyect/issues"
+  },
+  "homepage": "https://github.com/Emm1455/async-proyect#readme"
+}
