@@ -1,5 +1,6 @@
 const API = 'https://api.escuelajs.co/api/v1';
 const card = document.querySelector(".content");
+const options = document.querySelector(".options");
 
 
 async function fetchData(urlApi) { 
@@ -11,16 +12,27 @@ async function fetchData(urlApi) {
 const anotherFunction = async (urlApi) => {
     try{
         const products = await fetchData(`${urlApi}/products`);
-        let view = `
-        <div class="card flex">
-                <figure>
-                    <img src="" alt="Product_img" width="100%">
-                </figure>
-                <p class="name fs-200">${products[0].title}</p>
-                <p class="price fs-200 ff-sans-cond">$100</p>
-            </div>`;
-        
+        // console.log(products);
+        let view = `${products.map(product => 
+            `<div class="card flex">
+        <figure>
+            <img class="img" src="${product['images'][0]}" alt="Product_img">
+        </figure>
+        <p class="name fs-300">${product.title}</p>
+        <p class="price fs-400 ff-sans-cond">$ ${product.price}</p>
+    </div>`
+        ).slice(0,6).join('')}`
+        ;
+
+        const categories = await fetchData(`${urlApi}/categories`);
+        // console.log(categories);
+        let text = `${categories.map(categorie =>
+            `<p>${categorie.name}</p>`
+            ).slice(0,5).join('')}`
+            ;
+
         card.insertAdjacentHTML("beforeend",view);
+        options.innerHTML = text;
         // console.log(products[0]);
     } catch(error) {
         console.error(error);
