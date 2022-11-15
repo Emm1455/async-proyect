@@ -135,12 +135,12 @@ body{
 .content{
     width: 90%;
     /* border: solid hsl( var(--clr-accent) ) 0.2rem; */
+    padding-bottom: 2rem;
     gap: 1.6rem;
 }
 
 .options{
-    gap:1rem;
-    text-decoration: underline;
+    gap:1rem; 
 }
 
 .card{
@@ -154,6 +154,15 @@ body{
 
 .img{
     width: 100%;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 250px;
+    max-width: 350px;
+}
+
+/* ------------------- */
+/*       Dinamyc       */
+/* ------------------- */
+
+.selected{
+    text-decoration: underline;
+    text-decoration-style: wavy;
 }
