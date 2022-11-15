@@ -25,7 +25,7 @@ const initialCat = async(urlApi) =>{
         options.innerHTML = text;
 
         for (let i = 0; i < catClass.length; i++) {
-            categoryElmnt[i] = document.querySelector(`.${catClass[i]}`);            
+            categoryElmnt[i] = document.querySelector(`.${catClass[i]}`);          
         }
 
         categoryElmnt[0].addEventListener('click',change0);
@@ -61,14 +61,32 @@ function change0(){
     currentCat.classList.remove('selected');
     categoryElmnt[0].classList.add('selected');
     currentCat = categoryElmnt[0];
+    setView(0);
 }
 
 function change1(){
     currentCat.classList.remove('selected');
     categoryElmnt[1].classList.add('selected');
     currentCat = categoryElmnt[1];
+    setView(1); 
+}
 
-    let view = `${products.filter(product => product.category.name == catClass[1]).map(product => 
+function change2(){
+    currentCat.classList.remove('selected');
+    categoryElmnt[2].classList.add('selected');
+    currentCat = categoryElmnt[2];
+    setView(2);
+}
+
+function change3(){
+    currentCat.classList.remove('selected');
+    categoryElmnt[3].classList.add('selected');
+    currentCat = categoryElmnt[3];
+    setView(3);
+}
+
+function setView(elmnt){
+    let view = `${products.filter(product => product.category.name == catClass[elmnt]).map(product => 
         `<div class="card flex">
         <figure>
             <img class="img" src="${product['images'][0]}" alt="Product_img">
@@ -80,18 +98,6 @@ function change1(){
     ;
 
     content.innerHTML = view;
-}
-
-function change2(){
-    currentCat.classList.remove('selected');
-    categoryElmnt[2].classList.add('selected');
-    currentCat = categoryElmnt[2];
-}
-
-function change3(){
-    currentCat.classList.remove('selected');
-    categoryElmnt[3].classList.add('selected');
-    currentCat = categoryElmnt[3];
 }
 
 initialCat(API);

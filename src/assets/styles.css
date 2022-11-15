@@ -139,8 +139,13 @@ body{
     gap: 1.6rem;
 }
 
+.content > *:hover {
+    outline: solid hsl(var(--clr-light), 0.9) 0.3rem ;
+}
+
 .options{
     gap:1rem; 
+    cursor: pointer;
 }
 
 .card{
