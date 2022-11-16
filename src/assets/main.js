@@ -15,13 +15,13 @@ async function fetchData(urlApi) {
 const initialCat = async(urlApi) =>{
     try{
         const categories = await fetchData(`${urlApi}/categories`);
-        //console.log(categories);
+
         let text = `${categories.map(category =>
             `<p class="${category.name}">${category.name}</p>`            
             ).slice(0,4).join('')}`
             ;     
         catClass = categories.map(category => category.name).slice(0,4); 
-        // console.log(catClass);
+
         options.innerHTML = text;
 
         for (let i = 0; i < catClass.length; i++) {
@@ -33,12 +33,11 @@ const initialCat = async(urlApi) =>{
         categoryElmnt[2].addEventListener('click',change2);
         categoryElmnt[3].addEventListener('click',change3);
 
-
         categoryElmnt[0].classList.add('selected');
         currentCat = categoryElmnt[0];
 
         products = await fetchData(`${urlApi}/products`);
-        // console.log(products);
+
         let view = `${products.filter(product => product.category.name == catClass[0]).map(product => 
             `<div class="card flex">
             <figure>
@@ -101,17 +100,3 @@ function setView(elmnt){
 }
 
 initialCat(API);
-
-
-
-
-
-
-
-// function toogleCategory1{
-//     if (){
-
-//     }
-// }
-// anotherFunction(API); //se hace el llamado
-//Apuntes: https://www.notion.so/emmanuelsworld/Mod-Async-await-d558010ff1a8493f9f4ff3cdc42105cc
