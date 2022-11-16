@@ -118,11 +118,38 @@ body{
 
 .explanation{
     width: 100%;
-    height: 30%;
+    /* height: 30%; */
     /* justify-content: space-around; */
-    gap: 1rem;
+    align-items: center;
+    padding: 4rem 0;
+    gap: 3rem;
 }
 
+.description{
+    width: 40%;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.description h1 {
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.description img {
+    width: 5rem;
+    min-width: 3rem;
+}
+
+.description p {
+    color: hsl( var(--clr-white) , 0.8);
+}
+
+.project-logo{
+    width: 30rem;
+    min-width: 20rem;
+}
 .main{
     width: 100%;
     /* height: 70%; */
@@ -170,4 +197,18 @@ body{
 .selected{
     text-decoration: underline;
     text-decoration-style: wavy;
+}
+
+/* ------------------- */
+/*    Media Queries    */
+/* ------------------- */
+
+@media(max-width: 768px){
+    .explanation{
+        flex-direction: column;
+    }
+
+    .description{
+        width: 80%;
+    }
 }
