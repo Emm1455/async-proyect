@@ -4,7 +4,7 @@
   "description": "Proyect of asyncronous conection to Platzi Fake Store API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Emm1455/async-proyect/issues"
   },
-  "homepage": "https://github.com/Emm1455/async-proyect#readme"
+  "homepage": "https://github.com/Emm1455/async-proyect#readme",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
