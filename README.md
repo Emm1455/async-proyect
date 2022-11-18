@@ -8,7 +8,7 @@
 
 # Platzi Fake Stores API calls
 
-##Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Motivation](#motivation)
